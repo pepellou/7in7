@@ -101,4 +101,9 @@ Tree.new({
 # is surprisingly simple in Ruby.) If you want, include line numbers.
 file = "second-day-self-study.rb"
 pattern = /.*anywhere.*/
-File.open(file).readlines.select { |l| l.match(pattern) }.each { |l| puts l }
+lines = File.open(file).readlines
+count = 0
+lines
+	.collect { |line| count += 1; "#{count}: " + line }
+	.select { |l| l.match(pattern) }
+	.each { |l| puts l }
