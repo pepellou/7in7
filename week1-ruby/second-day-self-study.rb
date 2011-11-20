@@ -43,15 +43,10 @@ puts "Keys: #{keys} | Values: #{values}"
 # Enumerable.
 numbers = (1..16).to_a
 
-count = 0
 numbers.each do |num|
-	count += 1
 	print num 
 	print " "
-	if count == 4
-		puts
-		count = 0
-	end
+	puts if num == 4
 end
 
 numbers.each_slice(4) { |a| puts a.join " " }
